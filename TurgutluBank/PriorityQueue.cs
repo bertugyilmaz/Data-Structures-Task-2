@@ -37,7 +37,10 @@ namespace TurgutluBank
                 int i;
                 for (i = count - 1; i >= 0; i--)
                 {
-                    if ((int)o > (int)Queue[i])
+                    Customer c = (Customer)o;
+                    Customer cs = (Customer)Queue[i];
+
+                    if (c.taskTime > cs.taskTime)
                         Queue[i + 1] = Queue[i];
                     else
                         break;
