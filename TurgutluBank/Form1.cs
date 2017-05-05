@@ -24,7 +24,7 @@ namespace TurgutluBank
 
         List<Customer> customers = new List<Customer>();
 
-        int ort1, ort2;
+        int average1, average2;
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -56,7 +56,7 @@ namespace TurgutluBank
                 average += c.standbyTime;
             }
             circularTextBox.Text += "Ortalama süresi : " + (average / 20).ToString();
-            ort1 = average / 20;
+            average1 = average / 20;
         }
 
         private void priorityButton_Click(object sender, EventArgs e)
@@ -72,7 +72,7 @@ namespace TurgutluBank
                 average += c.PriorityStandbytime;
             }
             priorityTextBox.Text += "Ortalama süreniz : " + (average / 20).ToString();
-            ort2 = average / 20;
+            average2 = average / 20;
         }
 
         private void timeButton_Click(object sender, EventArgs e)
@@ -85,8 +85,8 @@ namespace TurgutluBank
                     timeTextBox.Text += c.customerNumber + "- " + c.standbyTime + " - " + c.PriorityStandbytime + Environment.NewLine;
                 }
             }
-            int ort_fark = ort1 - ort2;
-            float yuzdelik = 100 * ort_fark / ort1;
+            int ort_fark = average1 - average2;
+            float yuzdelik = 100 * ort_fark / average1;
             timeTextBox.Text += "Ortalama zaman farkı : " + (ort_fark).ToString() + Environment.NewLine;
             timeTextBox.Text += "Ortalama yüzdelik : %" + (yuzdelik).ToString();
         }
